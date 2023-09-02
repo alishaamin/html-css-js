@@ -1,0 +1,196 @@
+<!--Task: Marksheet by using html and javascript-->
+<!DOCTYPE html>
+<html>
+<head>
+ <title>MarkSheet</title>
+ <link rel="icon" href="/logo.png">
+  <style>
+   b{
+   	font-size:50px;
+    color:  #696969;
+   }
+   pre{
+   	font-size:22px;
+   	font-family: "Times New Roman", Times, serif;
+   }
+   th{
+    font-size:27px;
+    background-color:silver;
+    color:black;
+   }
+   td{
+    font-size:18px;
+    border:transparent;
+   }
+   input{
+    background-color:#F0FFFF;
+   }
+   .btn
+   {
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    background: #000;
+    color: #fff;
+    border: 1px solid;
+    transition: all 1s ease;
+    border: 4px solid lightblue;
+    transition-delay: 0.2s;
+    cursor: pointer;
+   }
+  </style>
+<script>
+ function mark() {
+  var a=document.form1.txtname.value
+  document.getElementById("nname").innerHTML=a;
+  var b=document.form1.txtfname.value
+  document.getElementById("fname").innerHTML=b;
+  var c=document.form1.txtiname.value
+  document.getElementById("insname").innerHTML=c;
+  var d=document.form1.txtbatch.value
+  document.getElementById("batch").innerHTML=d;
+  var e=document.form1.textac.value
+  document.getElementById("nameac").innerHTML=e;
+  var f=document.form1.texteco.value
+  document.getElementById("eco").innerHTML=f;
+  var i=document.form1.textbank.value
+  document.getElementById("bank").innerHTML=i;
+  var j=document.form1.textstate.value
+  document.getElementById("state").innerHTML=j;
+  var k=document.form1.textbm.value
+  document.getElementById("bmaths").innerHTML=k;
+
+ var count = eval(e)+eval(f)+eval(i)+eval(j)+eval(k);
+ document.getElementById("total").innerHTML=count;
+ var txt2=eval(parseFloat(count*100)/500);
+ document.getElementById("percent").innerHTML=txt2.toFixed(2)+"%"; //use for percent
+ //use switch function for grades
+ switch(true)
+{
+case(txt2>=80):
+document.getElementById("grade").innerHTML="A1";
+break;
+case(txt2>=70):
+document.getElementById("grade").innerHTML="A";
+break;
+case(txt2>=60):
+document.getElementById("grade").innerHTML="B";
+break;
+case(txt2>=50):
+document.getElementById("grade").innerHTML="C";
+break;
+case(txt2>=40):
+document.getElementById("grade").innerHTML="D";
+break;
+case(txt2<40):
+document.getElementById("grade").innerHTML="Fail";
+break;
+}
+}
+</script>
+</head>
+<body bgcolor="#F5F5F5">
+<h1 style="text-align: center;"><b>S</b>TUDENT <b>M</b>ARKSHEET</h1>
+<form name="form1" style border: 2px solid #e8e80b; height:300; width: 400>
+<fieldset>
+ <legend><h2>Student Information:</h2></legend>
+ <pre>
+ Name:<input type="text" name="txtname"size="22"/>                                                                              Father Name:<input type="text" name="txtfname"/>
+ 
+Institute Name:<input type="text" name="txtiname"/>                                                                               Batch:<input type="numb" name="txtbatch"/>
+</pre>
+</fieldset>
+<fieldset style="font-size: 20px;">
+ <legend><h3>Subject Marks:</h3></legend>
+  Accounting:&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;<input type="text" name="textac" style="height:20px;"/>&nbsp;Out of 100
+  <br><br>
+  Economics:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" name="texteco" style="height:20px;"/>&nbsp;Out of 100
+  <br><br>
+  Banking:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" name="textbank" style="height:20px;"/>&nbsp;Out of 100
+  <br><br>
+  Statistics:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<input type="text" name="textstate" style="height:20px;"/>&nbsp;Out of 100<br><br>
+  Business Maths:&nbsp; &nbsp;<input type="text" name="textbm" style="height:20px;"/>&nbsp;Out of 100<br>
+  <br/>
+  <br/>
+  <div>
+     <input type="button" class="btn" name="submit" value="submit" onclick='mark()'>
+  </div>
+</fieldset>
+
+<br>
+<br>
+<table border="1" width="25%" height="10">
+  <tr>
+    <th colspan="4">Student Information</th>
+  </tr>
+  <tr>
+    <td>Name:</td>
+    <td><font id="nname"></font></td>
+  </tr>
+  <tr>
+    <td>Father Name:</td>
+    <td><font id="fname"></font></td>
+  </tr>
+  <tr>
+    <td>Institute Name:</td>
+    <td><font id="insname"></font></td>
+  </tr>
+  <tr>
+    <td>Batch:</td>
+    <td><font id="batch"></font></td>
+  </tr>
+   <tr>
+    <th colspan="4">Subject Marks</th>
+  </tr>
+  <tr>
+    <td>Accounting:</td>
+    <td><font id="nameac"></font></td>
+  </tr>
+  <tr>
+    <td>Economics:</td>
+    <td><font id="eco"></font></td>
+  </tr>
+  <tr>
+    <td>Banking:</td>
+    <td><font id="bank"></font></td>
+  </tr>
+  <tr>
+    <td>Statistics:</td>
+    <td><font id="state"></font></td>
+  </tr>
+  <tr>
+    <td> Business Maths:</td>
+    <td><font id="bmaths"></font></td>
+  </tr>
+  <tr>
+    <th colspan="4">Student Rmarks</th>
+  </tr>
+  <tr>
+    <td>Total:</td>
+    <td><font id="total"></font></td>
+  </tr>
+  <tr>
+    <td>Percentage:</td>
+    <td><font id="percent"></font></td>
+  </tr>
+  <tr>
+    <td>Grade:</td>
+    <td><font id="grade"></font></td>
+  </tr>
+</table>
+<br/>
+</form>
+</body>
+</html>
+<!-- margin-bottom:20px;
+        width:100px;
+        height:25px;
+        background-color:gray;
+        font-family:Ariel;
+        font-size:20px;
+        border-radius:6px;
+        border:2px solid black;
+        margin-left:50px;
+        box-shadow:2px 2px 2px;-->

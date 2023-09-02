@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Drag and drop upload</title>
+    <link rel="icon" href="/logo.png">
+    <!--CSS-->
+    <style>
+        body {
+            background: #e4e4e4;
+            display: grid;
+            place-items: center;
+            font-family: "Poppins", Arial, Helvetica, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .drop-container {
+            background: #fff;
+            padding: 1.5rem;
+            width: 450px;
+            display: inline-block;
+            border-radius: 20px;
+            box-shadow: 0 0 40px 15px rgba(0, 0, 0, 0.2);
+        }
+        .drop {
+            border-radius: 10px;
+            border: 3px dashed #aaaaaa;
+            display: grid;
+            width: 100%;
+            place-content: center;
+            padding: 2rem;
+            box-sizing: border-box;
+            display: grid;
+            place-items: center;
+        }
+
+        .active {
+            border: 3px solid #4b4b4b;
+            background: #dea1ff;
+        }
+
+        .drop .icon {
+            font-size: 60px;
+            color: #4990e6;
+        }
+        .drop .text {
+            text-align: center;
+            font-weight: 500;
+            color: #443f46;
+            margin-top: 1rem;
+        }
+
+        .progress {
+            background: #1671f9;
+            width: 0%;
+            height: 20px;
+            display: none;
+            border-radius: 10px;
+            transition: all 0.2s;
+        }
+        .drop label {
+            background: #1693f9;
+            padding: 0.7rem 1.8rem;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .line {
+            width: 80px;
+            height: 1px;
+            background: #949494;
+        }
+
+        .or-con {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem;
+        }
+
+        .or {
+            margin: 0 1rem;
+            font-weight: 500;
+            color: #443f46;
+        }
+    </style>
+    
+  </head>
+  <body>
+    <div class="drop-container">
+      <div class="drop">
+        <i class="fa-solid fa-photo-film icon"></i>
+        <span class="text">
+          Drag and drop your documents, photos, and video here.
+        </span>
+        <div class="or-con">
+          <span class="line"></span>
+          <span class="or">OR</span>
+          <span class="line"></span>
+        </div>
+        <label for="file-upload">Browse Files</label>
+        <input type="file" id="file-upload" class="file-input" multiple />
+      </div>
+      <div class="progress"></div>
+    </div>
+    <!--JS-->
+    <script>
+        const drop = document.querySelector(".drop");
+        const input = document.querySelector(".drop input");
+        const text = document.querySelector(".text");
+        const progress = document.querySelector(".progress");
+
+        let files = [];
+
+        input.addEventListener("change", () => {
+        drop.style.display = "none";
+        upload();
+        });
+
+        drop.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        text.innerHTML = "Release your mouse to drop.";
+        drop.classList.add("active");
+        });
+
+        drop.addEventListener("dragleave", (e) => {
+        e.preventDefault();
+        text.innerHTML = "Drag and drop your documents, photos, and video here.";
+        drop.classList.remove("active");
+        });
+
+        drop.addEventListener("drop", (e) => {
+        e.preventDefault();
+        files = e.dataTransfer.files;
+        drop.style.display = "none";
+        upload();
+        });
+
+        // Upload Logic
+        function upload() {
+        // fake Upload Logic
+        let intervalCount = 0.25;
+        progress.style.display = "block";
+        progress.style.width = `${20 * intervalCount}%`;
+        const interval = setInterval(() => {
+            intervalCount += 0.25;
+            progress.style.width = `${20 * intervalCount}%`;
+            if (intervalCount == 5) {
+            clearInterval(interval);
+            }
+        }, 100);
+        }
+    </script>
+  </body>
+</html>

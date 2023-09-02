@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tooltip animation</title>
+  <link rel="icon" href="/logo.png">
+  <!-- Font icons pulled from remix icon CDN (Content delivery network) -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <span class="icon" data-tooltip="Instagram">
+    <i class="ri-instagram-line"></i>
+  </span>
+  <!--CSS-->
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #333652;
+        color: #151515;
+        display: grid;
+        place-content: center;
+        height: 100vh;
+    }
+
+    /* ======================== */
+
+    .icon {
+        position: relative;
+        display: inline-flex;
+    }
+    .icon i {
+        font-size: 36px;
+        color: #fff;
+    }
+    .icon::before,
+    .icon::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 3px);
+        visibility: hidden;
+        transition: transform .5s;
+    }
+    .icon::before {
+        top: -10px;
+        border: 5px solid transparent;
+        border-top: 5px solid #fff;
+    }
+    .icon::after {
+        content: attr(data-tooltip);
+        top: -30px;
+        padding: 2px 5px;
+        border-radius: 4px;
+        color: #000;
+        font-size: 12px;
+        background-color: #fff;
+    }
+    .icon:hover::before,
+    .icon:hover::after {
+        transform: translate(-50%, 0);
+        visibility: visible;
+    }
+  </style>
+</body>
+</html>

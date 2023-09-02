@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Vorteile</title>
+    <link rel="icon" href="/logo.png">
+    <!--CSS-->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #eeeeee;
+        font-family: 'Open Sans', Arial, Helvetica, Sans-serif, Verdana, Tahoma;
+      }
+
+      ul { list-style-type: none; }
+
+      a {
+        color: #b63b4d;
+        text-decoration: none;
+      }
+
+        /** =======================
+        * Contenedor Principal
+        ===========================*/
+      h1 {
+        color: #FFF;
+        font-size: 24px;
+        font-weight: 400;
+        text-align: center;
+        margin-top: 80px;
+      }
+
+      h1 a {
+        color: #c12c42;
+        font-size: 16px;
+      }
+
+      .accordion {
+        width: 100%;
+        max-width: 360px;
+        margin: 30px auto 20px;
+        background: #eeeeee;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        border-radius: 0px;
+      }
+
+      .accordion .link {
+        cursor: pointer;
+        display: block;
+        padding: 65px 15px 30px 42px;
+        color: #1a1a1a;
+        font-size: 14px;
+        font-weight: 700;
+        position: relative;
+        -webkit-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+      }
+
+      .accordion li:last-child .link { border-bottom: 0; }
+
+      .accordion li i {
+        position: absolute;
+        top: 16px;
+        left: 12px;
+        font-size: 18px;
+        color: #1a1a1a;
+        -webkit-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+      }
+
+      .accordion li i.fa-chevron-down {
+        right: 12px;
+        left: auto;
+        font-size: 16px;
+      }
+
+      .accordion li.open .link { color: #872b2b; }
+
+      .accordion li.open i { color: #872b2b; }
+
+      .accordion li.open i.fa-chevron-down {
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+
+        /*** Submenu*/
+      .submenu {
+        display: none;
+        background: #eeeeee;
+        font-size: 13px;
+        text-align: center;
+        padding-top: 3%;
+        padding-bottom: 2%;
+        padding-left: 3%;
+        padding-right: 3%;
+      }
+
+      .submenu li { border-bottom: 1px solid #4b4a5e; }
+
+      .submenu a {
+        display: block;
+        text-decoration: none;
+        color: #1a1a1a;
+        padding: 12px;
+        padding-left: 42px;
+        -webkit-transition: all 0.25s ease;
+        -o-transition: all 0.25s ease;
+        transition: all 0.25s ease;
+      }
+
+      .submenu a:hover {
+        background: #b63b4d;
+        color: #FFF;
+      }
+    </style>
+</head>
+<body>
+  <!-- Contenedor -->
+  <div class="vmob">
+    <ul id="accordion" class="accordion">
+      <li>
+        <div class="link"><p style="padding-left: 15%; margin-top: -9%;">Kostenloser & schneller Versand</p><i style="padding-top: 6%;" class="fa fa-chevron-down"></i><i><img width="65" src="https://cdn.shopify.com/s/files/1/0017/4417/5193/files/KX_Fast_and_Free_Shipping.png?v=1600527392"></i></div>
+        <ul class="submenu">
+            <p>Durch den kostenlosen und schnellen Versand International, erhalten unsere Kunden Ihre Produkte innerhalb von kürzester Zeit.</p>
+        </ul>
+      </li>
+      <li>
+        <div class="link"><p style="padding-left: 15%; margin-top: -9%;">Unterstützung durch Spenden</p><i style="padding-top: 6%;" class="fa fa-chevron-down"></i><i><img width="65" src="https://cdn.shopify.com/s/files/1/0017/4417/5193/files/KX_Environment.png?v=1600527392"></i></div>
+        <ul class="submenu">
+            <p>Um einen positiven Einfluss auf das Weltgeschehen zu haben, spenden wir 10% unserer Gewinne an Ärzte ohne Grenzen und nehmen regelmässig an Spendenaktionen teil.</p>
+        </ul>
+      </li>
+      <li>
+        <div class="link"><p style="padding-left: 15%; margin-top: -9%;">2 Bäume pro Bestellung</p><i style="padding-top: 6%;" class="fa fa-chevron-down"></i><i><img width="65" src="https://cdn.shopify.com/s/files/1/0017/4417/5193/files/KX_One_Tree_Planted.png?v=1600527392"></i></div>
+        <ul class="submenu">
+            <p>KX tut nicht nur Ihrer Garderobe gut, sondern auch unserem Planeten. Bei jeder Bestellung werden 2 Bäume gepflanzt.</p>
+        </ul>
+      </li>
+      <li>
+        <div class="link"><p style="padding-left: 15%; margin-top: -9%;">Hochwertige Materialen</p><i style="padding-top: 6%;" class="fa fa-chevron-down"></i><i><img width="65" src="https://cdn.shopify.com/s/files/1/0017/4417/5193/files/KX_HQ_Brand_Fabric.png?v=1600559122"></i></div>
+        <ul class="submenu">
+            <p>Für die Produktion der KX Unikate, nehmen wir nur erstklassige Materialen um die Qualität und das besondere Tragegefühl zu garantieren.</p>
+         </ul>
+      </li>
+        
+      <li>
+        <div class="link"><p style="padding-left: 15%; margin-top: -9%;">First Class Support</p><i style="padding-top: 6%;" class="fa fa-chevron-down"></i><i><img width="65" src="https://cdn.shopify.com/s/files/1/0017/4417/5193/files/KX_HQ_Support.png?v=1600527392"></i></div>
+        <ul class="submenu">
+        <p>Da unsere Kunden an höchster Stelle stehen, ist unser Kundendienst darauf fokussiert jedes Anliegen unserer Kunden schnell und effizient zu bearbeiten.</p>
+        </ul>
+      </li>
+        
+      <li>
+        <div class="link"><p style="padding-left: 15%; margin-top: -9%;">Nachhaltige Produktion</p><i style="padding-top: 6%;" class="fa fa-chevron-down"></i><i><img width="65" src="https://cdn.shopify.com/s/files/1/0017/4417/5193/files/KX_Ecologic_Factory.png?v=1600527392"></i></div>
+        <ul class="submenu">
+            <p>Durch hochwertige Herstellungsprozesse und eine nachhaltige Produktion, können wir nicht nur Qualität für unsere Artikel garantieren, sondern auch die Umwelt schützen.</p>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <!--JS-->
+  <script>
+      $(function() {
+	var Accordion = function(el, multiple) {
+		this.el = el || {};
+		this.multiple = multiple || false;
+
+		// Variables privadas
+		var links = this.el.find('.link');
+		// Evento
+		links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+	}
+
+	Accordion.prototype.dropdown = function(e) {
+		var $el = e.data.el;
+			$this = $(this),
+			$next = $this.next();
+
+		$next.slideToggle();
+		$this.parent().toggleClass('open');
+
+		if (!e.data.multiple) {
+			$el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+		};
+	}	
+
+	    var accordion = new Accordion($('#accordion'), false);
+    });
+  </script>
+</body>
+</html>
